@@ -1,3 +1,17 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  root 'home#index'
+
+  devise_for :users, controllers: {
+    registration: 'users/registrations'
+  }
+
+  # get 'dogs/new', to: 'dogs#new', as: 'new_dog'
+
+  get 'all_dogs', to: 'dogs#all_dogs'
+  
+  resources :dogs do 
+    resources :playdates 
+  end 
+  
 end

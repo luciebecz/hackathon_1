@@ -1,0 +1,29 @@
+<h2>Welcome <%= current_user.first_name %> </h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Your Dogs</th>
+      <th></th>
+    </tr>
+  </thead>
+  <% if @dogs.any? %>
+  <tbody>
+    <% @dogs.each do |dog| %>
+    <tr>
+      <td><h4><%= dog.name %></h4></td>
+      <td class="right"><%= link_to 'View Dog And Playdates', dog_path(dog), class:'btn teal lighten-1 black-text hoverable' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  </table>
+    <% else %>
+      <p>You Have No Dogs, Please Add One!</p>
+    <% end %>
+<hr />
+<div>
+<%= link_to 'Add A Dog', new_dog_path, class:'btn teal lighten-2 black-text hoverable' %>
+<%= link_to 'Set Up A Play Date!', all_dogs_path, class:'btn teal lighten-2 black-text hoverable' %>
+<%= link_to 'Log Out', destroy_user_session_path, class:'btn teal lighten-2 black-text hoverable', method: :delete %>
+</div>
+

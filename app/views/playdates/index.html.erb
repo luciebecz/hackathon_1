@@ -1,0 +1,25 @@
+<h1>Playdates for <%= @dog.name  %></h1>
+
+
+<table>
+  <thead>
+    <tr> 
+      <th>Location</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dog.playdates.each do |playdate| %>
+    <tr>
+      <td><%= playdate.location %></td>
+      <td><%= playdate.start_time%></td>
+      <td><%= playdate.end_time%></td>
+      <td><%= playdate.description%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<hr />
+<%= link_to "Back To Dog", dog_path(@dog), class:'btn teal lighten-2 black-text hoverable'%>

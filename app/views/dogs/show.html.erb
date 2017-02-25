@@ -1,0 +1,32 @@
+<h1><%= @dog.name.titleize%></h1>
+
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Breed</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @dog.name.titleize %></td>
+      <td><%= @dog.breed.titleize %></td>
+      <td><%= @dog.age %></td>
+      <td><%= @dog.gender.titleize %></td>
+      <td><%= @dog.description %></td>
+    </tr>
+  </tbody>
+  </table>
+  <hr />
+
+<div>
+  <%= link_to 'Play Dates For This Dog', dog_playdates_path(@dog, @playdate), class:'btn teal lighten-2 black-text hoverable'%>
+  <%= link_to 'Edit Dog Details', edit_dog_path(@dog), class:'btn teal lighten-2 black-text hoverable' %></a>
+<%= link_to 'Delete Dog', @dog, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn teal lighten-2 black-text hoverable' %>
+ <%= link_to 'Home', :root, class:'btn teal lighten-2 black-text hoverable' %>
+</div>
+

@@ -1,0 +1,28 @@
+<%= form_for @dog do |f| %>
+  <div>
+    <%= f.label :name %> 
+    <%= f.text_field :name %> 
+  </div>
+  
+  <div>
+    <%= f.label :breed %> 
+    <%= f.text_field :breed %> 
+  </div>
+
+    <div>
+      <%= f.label :gender %>
+      <%= f.text_field :gender %> 
+    </div>
+
+    <div>
+      <%= f.label :age %> 
+      <%= f.number_field :age %> 
+    </div>
+
+    <div>
+      <%= f.label :description %> 
+      <%= f.text_field :description %> 
+    </div>
+
+    <%= f.submit 'submit', class:'btn teal lighten-2 black-text hoverable' %>
+  <% end %>
