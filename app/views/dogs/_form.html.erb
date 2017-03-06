@@ -24,5 +24,10 @@
       <%= f.text_field :description %> 
     </div>
 
+    <div>
+      <%= f.label :Profile_Picture %>
+      <%= f.file_field :avatar %>
+    </div><br />
+
     <%= f.submit 'submit', class:'btn teal lighten-2 black-text hoverable' %>
   <% end %>

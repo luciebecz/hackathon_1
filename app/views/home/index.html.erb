@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Your Dogs</th>
       <th></th>
     </tr>
@@ -11,6 +12,7 @@
   <tbody>
     <% @dogs.each do |dog| %>
     <tr>
+      <td><%= (image_tag(dog.avatar.url(:thumb)))%>
       <td><h4><%= dog.name %></h4></td>
       <td class="right"><%= link_to 'View Dog And Playdates', dog_path(dog), class:'btn teal lighten-1 black-text hoverable' %></td>
     </tr>

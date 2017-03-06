@@ -3,11 +3,14 @@
 <div class="container">
   <div class="row">
       <% @dogs.each do |dog| %>
-        <div class="col s12 m6">
+        <div class="col s12 m12">
           <div class="z-depth-5">
             <div class="card blue accent-1">
               <div class="card-content">
-                <span class="card-title white-text"><%= dog.name %><br /><%= dog.breed %><br /><%= dog.description %></span>
+                <li class="card-title white-text"><%= dog.name %></li>
+                <li class="card-title white-text"><%= (image_tag(dog.avatar.url(:thumb)))%></li>
+                <li class="card-title white-text"><%= dog.breed %></li><br />
+                <li class="card-title white-text"><%= dog.description %></li><br />
               </div>
               <div class="card-action center blue darken-2">
                 <%= link_to "Invite To Play!", new_dog_playdate_path(dog) %>
